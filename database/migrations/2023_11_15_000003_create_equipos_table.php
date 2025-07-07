@@ -18,12 +18,14 @@ return new class extends Migration
             $table->string('marcaEquipo');
             $table->text('danioEquipo');
             $table->text('accesoriosEquipo');
-            $table->string('imagenesEquipo');
+            $table->json('imagenesEquipo');
             $table->string('modeloEquipo');
             $table->text('observacionesEquipo');
             $table->string('numeroDeSerieEquipo');
             $table->dateTime('fechaLlegada');
             $table->dateTime('fechaSalida')->nullable();
+            $table->string('tipoDeMantenimiento')->nullable();
+            $table->text('solucion')->nullable();
             $table->timestamps();
         });
     }

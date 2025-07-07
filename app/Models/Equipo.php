@@ -21,6 +21,12 @@ class Equipo extends Model
         'numeroDeSerieEquipo',
         'fechaLlegada',
         'fechaSalida',
+        'tipoDeMantenimiento',
+        'solucion',
+    ];
+
+    protected $casts = [
+        'imagenesEquipo' => 'array',
     ];
 
     public function tecnico(): BelongsTo

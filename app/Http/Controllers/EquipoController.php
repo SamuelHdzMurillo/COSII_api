@@ -23,12 +23,14 @@ class EquipoController extends Controller
             'marcaEquipo' => 'required|string',
             'danioEquipo' => 'required|string',
             'accesoriosEquipo' => 'required|string',
-            'imagenesEquipo' => 'required|string',
+            'imagenesEquipo' => 'required|array',
             'modeloEquipo' => 'required|string',
             'observacionesEquipo' => 'required|string',
             'numeroDeSerieEquipo' => 'required|string',
             'fechaLlegada' => 'required|date',
-            'fechaSalida' => 'nullable|date|after:fechaLlegada'
+            'fechaSalida' => 'nullable|date|after:fechaLlegada',
+            'tipoDeMantenimiento' => 'nullable|string',
+            'solucion' => 'nullable|string',
         ]);
 
         $equipo = Equipo::create($request->all());
@@ -49,12 +51,14 @@ class EquipoController extends Controller
             'marcaEquipo' => 'string',
             'danioEquipo' => 'string',
             'accesoriosEquipo' => 'string',
-            'imagenesEquipo' => 'string',
+            'imagenesEquipo' => 'array',
             'modeloEquipo' => 'string',
             'observacionesEquipo' => 'string',
             'numeroDeSerieEquipo' => 'string',
             'fechaLlegada' => 'date',
-            'fechaSalida' => 'nullable|date|after:fechaLlegada'
+            'fechaSalida' => 'nullable|date|after:fechaLlegada',
+            'tipoDeMantenimiento' => 'nullable|string',
+            'solucion' => 'nullable|string',
         ]);
 
         $equipo->update($request->all());
