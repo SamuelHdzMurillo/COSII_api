@@ -26,6 +26,11 @@ Route::post('/login', [AuthController::class, 'login']);
     // Rutas de Equipo
     Route::apiResource('equipos', EquipoController::class);
 
+    // Rutas de actualizaciones de equipos
+    Route::get('equipos/{equipo}/actualizaciones', [App\Http\Controllers\ActualizacionController::class, 'index']);
+    Route::post('equipos/{equipo}/actualizaciones', [App\Http\Controllers\ActualizacionController::class, 'store']);
+    Route::get('equipos/{equipo}/actualizaciones/{actualizacion}', [App\Http\Controllers\ActualizacionController::class, 'show']);
+
     // Catálogos simples
     Route::get('/catalogo-negocios', [NegocioController::class, 'catalogo']);
     Route::get('/catalogo-tecnicos', [TecnicoController::class, 'catalogo']);

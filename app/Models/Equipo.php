@@ -38,4 +38,13 @@ class Equipo extends Model
     {
         return $this->belongsTo(Negocio::class);
     }
+
+    public function actualizaciones()
+    {
+        return $this->hasMany(Actualizacion::class);
+    }
+
+    
+    
+        
 }
