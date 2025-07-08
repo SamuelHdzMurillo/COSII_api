@@ -53,4 +53,10 @@ class TecnicoController extends Controller
     {
         return response()->json($tecnico->equipos);
     }
+
+    public function catalogo(): \Illuminate\Http\JsonResponse
+    {
+        $catalogo = Tecnico::select('id', 'nombre', 'apellidos')->get();
+        return response()->json($catalogo);
+    }
 }

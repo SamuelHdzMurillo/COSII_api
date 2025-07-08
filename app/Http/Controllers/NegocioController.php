@@ -48,4 +48,10 @@ class NegocioController extends Controller
         $negocio->delete();
         return response()->json(null, 204);
     }
+
+    public function catalogo(): \Illuminate\Http\JsonResponse
+    {
+        $catalogo = Negocio::select('id', 'nombreNegocio')->get();
+        return response()->json($catalogo);
+    }
 }

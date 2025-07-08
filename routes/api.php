@@ -25,4 +25,8 @@ Route::post('/login', [AuthController::class, 'login']);
 
     // Rutas de Equipo
     Route::apiResource('equipos', EquipoController::class);
+
+    // Catálogos simples
+    Route::get('/catalogo-negocios', [NegocioController::class, 'catalogo']);
+    Route::get('/catalogo-tecnicos', [TecnicoController::class, 'catalogo']);
 //});
